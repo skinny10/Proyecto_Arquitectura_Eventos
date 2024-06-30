@@ -1,0 +1,1 @@
+{"version":3,"file":"eventRoom2Routes.js","sourceRoot":"","sources":["../../../src/infraestructure/routes/eventRoom2Routes.ts"],"names":[],"mappings":";;;;;AAGA,sDAIG;AAPH,sDAA8B;AAG9B,SAAgB,qBAAqB,CAAC,oBAA0C;IAC5E,MAAM,MAAM,GAAG,iBAAO,CAAC,MAAM,EAAE,CAAC;IAChC,MAAM,CAAC,IAAI,CAAC,cAAc,EAAE,oBAAoB,CAAC,cAAc,CAAC,IAAI,CAAC,oBAAoB,CAAC,CAAC,CAAC;IAC5F,OAAO,MAAM,CAAC;AAChB,CAAC"}

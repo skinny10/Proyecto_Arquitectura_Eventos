@@ -1,0 +1,307 @@
+/* Estilos generales para el cuerpo y HTML */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para el contenedor principal */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el encabezado */
+.header {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilos para el contenido principal */
+.content {
+  display: flex;
+  width: calc(850px - 20px);
+  margin: 20px 0;
+  position: relative; /* Añadido para el posicionamiento absoluto */
+}
+
+/* Estilos para los elementos de la sala */
+.ceiling, .floor, .wall {
+  position: absolute;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+}
+
+.ceiling {
+  top: 0;
+  width: 100%;
+  height: 20px;
+}
+
+.floor {
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+}
+
+.wall {
+  width: 100%;
+  height: calc(100% - 40px);
+}
+
+.north {
+  top: 20px;
+  height: calc(100% - 40px);
+}
+
+.east {
+  right: 0;
+  height: calc(100% - 40px);
+  width: 20px;
+}
+
+.south {
+  bottom: 20px;
+  height: 20px;
+}
+
+.west {
+  left: 0;
+  height: calc(100% - 40px);
+  width: 20px;
+}
+
+.lamp {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  width: 20px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lamp-on .lamp {
+  background-color: yellow;
+  box-shadow: 0 0 20px rgba(255, 255, 0, 0.8), 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+.lamp:hover {
+  cursor: pointer;
+}
+
+.furniture {
+  position: absolute;
+  background-color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.table {
+  width: 200px;
+  height: 100px;
+  top: calc(50% - 50px);
+  left: calc(50% - 100px);
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.chair {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.chair.top {
+  top: calc(50% - 160px);
+  left: calc(50% - 20px);
+}
+
+.chair.right {
+  top: calc(50% - 20px);
+  left: calc(50% + 140px);
+}
+
+.chair.bottom {
+  top: calc(50% + 120px);
+  left: calc(50% - 20px);
+}
+
+.chair.left {
+  top: calc(50% - 20px);
+  left: calc(50% - 160px);
+}
+
+.sofa {
+  width: 120px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 50px;
+}
+
+.sofa.left {
+  left: 60%;
+}
+
+.sofa.right {
+  right: 50%;
+}
+
+.sofa::before, .sofa::after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.sofa::before {
+  width: 10px;
+  height: 50px;
+  top: 5px;
+  left: 5px;
+  border-radius: 5px;
+}
+
+.sofa::after {
+  width: 10px;
+  height: 50px;
+  top: 5px;
+  right: 5px;
+  border-radius: 5px;
+}
+
+.table::before {
+  width: 10px;
+  height: 90px;
+  top: 5px;
+  left: 5px;
+  border-radius: 5px;
+}
+
+.table::after {
+  width: 10px;
+  height: 90px;
+  top: 5px;
+  right: 5px;
+  border-radius: 5px;
+}
+
+.chair::before {
+  width: 5px;
+  height: 30px;
+  top: 5px;
+  left: 5px;
+  border-radius: 5px;
+}
+
+.chair::after {
+  width: 5px;
+  height: 30px;
+  top: 5px;
+  right: 5px;
+  border-radius: 5px;
+}
+
+.button-home-container {
+  display: flex;
+  justify-content: flex-start;
+  position: absolute;
+  bottom: 10px;
+  left: 465px;
+}
+
+.button-home {
+  margin: 4px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 140px;
+  height: 40px;
+}
+
+.button-home:hover {
+  background-color: #0056b3;
+}
+
+.furniture.selected {
+  border-color: #FFC107;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+/* Estilos para el historial de eventos */
+.event-history {
+  width: 300px;
+  margin-left: 20px;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.event-history h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.chat-container {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  height: 350px;
+  overflow-y: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-message {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+.chat-message:hover {
+  transform: scale(1.02);
+}
+
+.chat-message:last-child {
+  margin-bottom: 0;
+}

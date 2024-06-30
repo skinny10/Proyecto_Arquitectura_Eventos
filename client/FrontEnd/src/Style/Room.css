@@ -1,0 +1,318 @@
+.room-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+  }
+  
+  .room-container {
+    width: 700px;
+    position: relative;
+    left: -30%;
+  }
+  
+  .room {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  
+  .cooling {
+    background: linear-gradient(to bottom, #e0f7fa 0%, #e0f7fa 50%, #ffffff 100%);
+    transition: background 0.5s;
+  }
+  
+  .room-header {
+    font-size: 36px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px #ca1919;
+    text-align: center;
+  }
+  
+  .room-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .ceiling,
+  .floor,
+  .wall {
+    position: absolute;
+    background-color: #fffafa;
+  }
+  
+  .ceiling {
+    top: 0;
+    width: 100%;
+    height: 10%;
+  }
+  
+  .floor {
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+  }
+  
+  .wall {
+    width: 10%;
+    height: 80%;
+  }
+  
+  .wall.north {
+    top: 0;
+    left: 0;
+  }
+  
+  .wall.east {
+    top: 10%;
+    right: 0;
+  }
+  
+  .wall.south {
+    bottom: 0;
+    left: 0;
+  }
+  
+  .wall.west {
+    top: 10%;
+    left: 0;
+  }
+  
+  .furniture {
+    position: absolute;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .sofa {
+    top: 13%;
+    left: 20%;
+    width: 25%;
+    height: 10%;
+    background: linear-gradient(145deg, #d8a395, #c08778);
+    border-radius: 10px;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sofa::before,
+  .sofa::after {
+    content: '';
+    position: absolute;
+    background-color: #d1908a;
+    width: 10px;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: -2px 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sofa::before {
+    top: 50%;
+    left: 5px;
+  }
+  
+  .sofa::after {
+    top: 50%;
+    right: 5px;
+  }
+  
+  .table {
+    top: 50%;
+    left: 25%;
+    width: 20%;
+    height: 18%;
+    background: linear-gradient(145deg, #d7b8a8, #c39a85);
+    border-radius: 8px;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .table::before,
+  .table::after {
+    content: '';
+    position: absolute;
+    background-color: #c39a85;
+    width: 8px;
+    height: 90%;
+    border-radius: 5px;
+  }
+  
+  .table::before {
+    top: 5%;
+    left: 5px;
+  }
+  
+  .table::after {
+    top: 5%;
+    right: 5px;
+  }
+  
+  .chair {
+    background: linear-gradient(145deg, #bda27b, #a6845b);
+    width: 5%;
+    height: 7%;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: -3px 3px 9px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chair::before,
+  .chair::after {
+    content: '';
+    position: absolute;
+    background-color: #a6845b;
+    width: 5px;
+    height: 90%;
+    border-radius: 5px;
+  }
+  
+  .chair::before {
+    top: 5%;
+    left: 2px;
+  }
+  
+  .chair::after {
+    top: 5%;
+    right: 2px;
+  }
+  
+  .chair.top {
+    top: 42%;
+    left: 32.8%;
+  }
+  
+  .chair.right {
+    top: 56.8%;
+    left: 46%;
+  }
+  
+  .chair.bottom {
+    top: 70%;
+    left: 32.8%;
+  }
+  
+  .chair.left {
+    top: 56.8%;
+    left: 19%;
+  }
+  
+  .tv {
+    top: 70%;
+    left: 79.7%;
+    transform: translate(-50%, -50%);
+    width: 12%;
+    height: 10%;
+    background: linear-gradient(145deg, #333, #000);
+    border-radius: 5px;
+    box-shadow: -3px 3px 9px rgba(0, 0, 0, 0.2);
+  }
+  
+  .climate {
+    top: 10%;
+    right: 10%;
+    width: 20%;
+    height: 10%;
+    background-color: lightblue;
+    border: 2px solid #000;
+    position: absolute;
+    cursor: pointer;
+    transition: background-color 0.5s, box-shadow 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    z-index: 1;
+  }
+  
+  .climate.active {
+    background-color: #007bff;
+    box-shadow: 0 0 10px #007bff;
+  }
+  
+  .climate-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+  }
+  
+  .climate-display div {
+    margin-bottom: 10px;
+  }
+  
+  .event-history {
+    width: 35%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    overflow-y: auto;
+    text-align: left;
+    position: absolute;
+    right: -200px;
+    top: 20%;
+    max-height: calc(100% - 40px);
+    z-index: 1;
+  }
+  
+  .chat-container {
+    padding: 10px;
+  }
+  
+  .chat-message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background-color: #e0e0e0;
+    border-radius: 8px;
+  }
+  
+  .button-container {
+    position: absolute;
+    bottom: 20px;
+    left: -170px; 
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 20px); 
+    z-index: 1;
+  }
+  
+  .white-cover {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1200px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .room-page {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .room-container {
+      width: 100%;
+      margin-bottom: 20px;
+      left: 0;
+    }
+    
+    .event-history {
+      width: 100%;
+      margin-left: 0;
+      text-align: left;
+    }
+  }
